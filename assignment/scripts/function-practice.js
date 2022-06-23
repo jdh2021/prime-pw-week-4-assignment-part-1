@@ -73,7 +73,7 @@ function find( value, array ){
   return false;
 }
 console.log('Was the value found?', find(3, [9, 0, 3, 1]) + '.'); //expect true
-console.log('Was the value found?', find('cat', ['dog','bird','fish']) + '.'); //expect false
+console.log('Was the value found?', find('cat', ['dog', 'bird', 'fish']) + '.'); //expect false
 
 // ----------------------
 // Stretch Goals
@@ -148,7 +148,7 @@ function specialReverse(sentenceString, characterInput) {
       let firstLetter = thisWord[0];
       let newWord = [];
       let newWordString = '';
-      if (firstLetter === characterInput) {
+      if (firstLetter.toLowerCase() === characterInput.toLowerCase()) {
         for (y=thisWord.length-1; y >=0; y-=1) {
           newWord.push(thisWord[y]);
           newWordString = newWord.join('');
@@ -160,4 +160,4 @@ function specialReverse(sentenceString, characterInput) {
    let finalSentenceString = newSentence.join(' ');
    return finalSentenceString;
 }
-console.log(specialReverse('She sells seashells by the seashore', 't'));
+console.log(specialReverse('She sells seashells by the seashore', 's'));
