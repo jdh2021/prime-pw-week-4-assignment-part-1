@@ -38,9 +38,11 @@ console.log(`Multiplying the three numbers returns ${multiplyThree(3,5,-2)}.`);
 function isPositive( number ) {
   if ( number > 0 ){
     return true;
-  }
+  } else {
     return false;
+  }
 }
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
@@ -70,7 +72,7 @@ function find( value, array ){
   }
   return false;
 }
-console.log('Was the value found?', find(3, [9,0,3,1]) + '.'); //expect true
+console.log('Was the value found?', find(3, [9, 0, 3, 1]) + '.'); //expect true
 console.log('Was the value found?', find('cat', ['dog','bird','fish']) + '.'); //expect false
 
 // ----------------------
@@ -99,14 +101,63 @@ function sumAll( array ) {
   }
   return sum;
 }
-console.log(`The sum of the the numbers in the array is ${sumAll([1,5,3,-1,4])}.`);
+console.log(`The sum of the the numbers in the array is ${sumAll([1, 5, 3, -1, 4])}.`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+function positiveNumbersSearch (array) {
+  let positiveNumbersFound = [];
+  let noPositiveNumbersFound = [];
+  for (let i=0; i<array.length; i+=1) {
+      if (array[i] > 0) {
+        positiveNumbersFound.push(array[i]);
+      } 
+    }
+    if (positiveNumbersFound.length > 0) {
+      return positiveNumbersFound;
+    } else {
+      return noPositiveNumbersFound;
+  }
+}
+console.log(positiveNumbersSearch([12, 2, 3, 1, 9]));
+console.log(positiveNumbersSearch([0, -1, -5]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+/*Reverse Words Starting With a Particular Letter
+Published by Helen Yu, Source: edabit.com
+Write a function that reverses all the words in a sentence that 
+start with a particular letter. 
+*/
+
+/** 
+ * Reverse only words that start with an input character in a given sentence.
+*@param {string} sentenceString 
+*@param {character} characterInput
+*@return {string} finalSentenceString
+*/
+
+function specialReverse(sentenceString, characterInput) {
+  let stringToArray = sentenceString.split(' ');
+  let newSentence = [];
+  for (let i=0; i <stringToArray.length; i+=1) {
+      let thisWord = stringToArray[i];
+      let firstLetter = thisWord[0];
+      let newWord = [];
+      let newWordString = '';
+      if (firstLetter === characterInput) {
+        for (y=thisWord.length-1; y >=0; y-=1) {
+          newWord.push(thisWord[y]);
+          newWordString = newWord.join('');
+        } newSentence.push(newWordString);
+      } else {
+        newSentence.push(thisWord);
+      }
+  }
+   let finalSentenceString = newSentence.join(' ');
+   return finalSentenceString;
+}
+console.log(specialReverse('She sells seashells by the seashore', 't'));
