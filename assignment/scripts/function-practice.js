@@ -24,14 +24,14 @@ function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
   return firstNumber + secondNumber;
 }
-console.log('Adding the two numbers returns', addNumbers(0,21) + '.');
+console.log('Adding the two numbers returns', addNumbers(0, 21) + '.');
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(firstNumber, secondNumber, thirdNumber ){
   let result = firstNumber * secondNumber * thirdNumber;
   return result;
 }
-console.log(`Multiplying the three numbers returns ${multiplyThree(3,5,-2)}.`);
+console.log(`Multiplying the three numbers returns ${multiplyThree(3, 5, -2)}.`);
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -157,7 +157,7 @@ function specialReverse(sentenceString, characterInput) {
         newSentence.push(thisWord);
       }
   }
-   let finalSentenceString = newSentence.join(' ');
-   return finalSentenceString;
+  let finalSentenceString = newSentence.join(' ');
+  return finalSentenceString;
 }
 console.log(specialReverse('She sells seashells by the seashore', 's'));
